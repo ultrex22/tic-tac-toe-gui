@@ -1,4 +1,6 @@
-""" Simple Tic Tac Toe GUI game using PyQt5"""
+""" Simple Tic Tac Toe GUI game using PyQt5.
+    I built this with some online code snippits and the GUI otherwise by hand , not using Designer.
+"""
 
 import sys
 from PyQt5.QtGui import QIcon, QPixmap
