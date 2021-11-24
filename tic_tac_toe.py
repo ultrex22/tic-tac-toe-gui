@@ -40,12 +40,13 @@ class Window(QMainWindow):
         cp = QDesktopWidget().availableGeometry().center()
         qr.moveCenter(cp)
         self.move(qr.topLeft())
+        self.setStyleSheet('background-color: rgb(170, 170, 255);')
 
     def create_title(self):
         """Create the title display."""
         # Create the display widget
-        self.title = QLabel('Welcome to Tic Tac Toe')
-        self.title.setStyleSheet('QLabel {color: #0000ee; font-size: 20px;}')
+        self.title = QLabel('Welcome to Tic Tac Toe!')
+        self.title.setStyleSheet('QLabel {color: #333333; font-size: 20px;}')
         # Set some title's properties
         self.title.setFixedHeight(35)
         self.title.setAlignment(Qt.AlignCenter)
@@ -68,9 +69,10 @@ class Window(QMainWindow):
             grid_layout.addWidget(self.grid[square_num], pos[0], pos[1])
             # change text to bg color to hide it, aadd border to center icon
             self.grid[square_num].setStyleSheet(
-                'QPushButton {padding-left: 12px; color: #eeeeee};')
+                'QPushButton {padding-left: 12px; color: #d6d6fc};')
         # Add grid_layout to the general layout
         self.general_layout.addLayout(grid_layout)
+        
 
     def connect(self):
         """ 
@@ -104,7 +106,7 @@ class Window(QMainWindow):
         self.player_x.setFixedHeight(30)
         self.player_x.setAlignment(Qt.AlignCenter)
         self.player_x.setStyleSheet(
-            'QLineEdit {background: #22aa22; color: white;}')
+            'QLineEdit {background: ; color: white;}')
         # Add the display to the general layout
         self.general_layout.addWidget(self.player_x)
 
@@ -115,6 +117,11 @@ class Window(QMainWindow):
         self.player_o.setAlignment(Qt.AlignCenter)
         # Add the display to the general layout
         self.general_layout.addWidget(self.player_o)
+        
+        self.player_x.setStyleSheet(
+            'QLineEdit {background: #00aaff; color: white;}')
+        self.player_o.setStyleSheet(
+            'QLineEdit {background: white; color: black;}')
 
     def update_grid(self, grid_item):
         """updates the game board with X or O and icon, also updates background color for player turn
@@ -126,7 +133,7 @@ class Window(QMainWindow):
             self.grid_squares_filled[grid_item.text()] = self.current_player
             if self.current_player == 'x':
                 self.player_o.setStyleSheet(
-                    'QLineEdit {background: #22aa22; color: white;}')
+                    'QLineEdit {background: #00aaff; color: white;}')
                 self.player_x.setStyleSheet(
                     'QLineEdit {background: white; color: black;}')
                 grid_item.setIcon(QIcon(QPixmap('x_icon.png')))
@@ -134,7 +141,7 @@ class Window(QMainWindow):
                 self.current_player = 'o'
             elif self.current_player == 'o':
                 self.player_x.setStyleSheet(
-                    'QLineEdit {background: #22aa22; color: white;}')
+                    'QLineEdit {background:#00aaff ; color: white;}')
                 self.player_o.setStyleSheet(
                     'QLineEdit {background: white; color: black;}')
                 grid_item.setIcon(QIcon(QPixmap('o_icon.png')))
@@ -196,7 +203,7 @@ class Window(QMainWindow):
             self.title.setStyleSheet(
                 'QLabel {color: #0000ee; font-size: 20px;}')
             self.player_x.setStyleSheet(
-                'QLineEdit {background: #22aa22; color: white;}')
+                'QLineEdit {background: ; color: white;}')
             self.player_o.setStyleSheet(
                 'QLineEdit {background: white; color: black;}')
             for square_num in self.grid:
