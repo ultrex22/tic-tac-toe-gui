@@ -1,4 +1,4 @@
-"""Main Window-Style application."""
+""" Simple Tic Tac Toe GUI game using PyQt5"""
 
 import sys
 from PyQt5.QtGui import QIcon, QPixmap
