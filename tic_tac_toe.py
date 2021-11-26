@@ -72,7 +72,6 @@ class Window(QMainWindow):
                 'QPushButton {padding-left: 12px; color: #d6d6fc};')
         # Add grid_layout to the general layout
         self.general_layout.addLayout(grid_layout)
-        
 
     def connect(self):
         """ 
@@ -117,7 +116,7 @@ class Window(QMainWindow):
         self.player_o.setAlignment(Qt.AlignCenter)
         # Add the display to the general layout
         self.general_layout.addWidget(self.player_o)
-        
+
         self.player_x.setStyleSheet(
             'QLineEdit {background: #00aaff; color: white;}')
         self.player_o.setStyleSheet(
@@ -136,7 +135,7 @@ class Window(QMainWindow):
                     'QLineEdit {background: #00aaff; color: white;}')
                 self.player_x.setStyleSheet(
                     'QLineEdit {background: white; color: black;}')
-                grid_item.setIcon(QIcon(QPixmap('x_icon.png')))
+                grid_item.setIcon(QIcon(QPixmap('icons/x_icon.png')))
                 self.check_for_winner()
                 self.current_player = 'o'
             elif self.current_player == 'o':
@@ -144,7 +143,7 @@ class Window(QMainWindow):
                     'QLineEdit {background:#00aaff ; color: white;}')
                 self.player_o.setStyleSheet(
                     'QLineEdit {background: white; color: black;}')
-                grid_item.setIcon(QIcon(QPixmap('o_icon.png')))
+                grid_item.setIcon(QIcon(QPixmap('icons/o_icon.png')))
                 self.check_for_winner()
                 self.current_player = 'x'
         else:
